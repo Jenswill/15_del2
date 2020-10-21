@@ -8,8 +8,16 @@ import java.awt.*;
 
 public class fieldContructor {
 
+
     public GUI_Field[] Construct() {
+
+        // Nedenstående koder er fra:
+        // CDIO1, af os, gruppe 15.
+
+        // Opretter array af felter fra antal
         GUI_Field[] fields = new GUI_Field[2];
+
+        // Opretter felter af forskellige typer
         GUI_Start infoField = new GUI_Start();
         GUI_Street carField = new GUI_Street();
 
@@ -18,9 +26,7 @@ public class fieldContructor {
         infoField.setBackGroundColor(Color.WHITE);
         infoField.setTitle("INFO");
         infoField.setSubText("Tryk her");
-        infoField.setDescription("Sådan spiller du spillet.\n I toppen af skærmen ses rul knappen, den ruller" +
-                " terningen. Hvis tur det er ses i feltet ved siden af info knappen. Den hvis bil er i feltetet," +
-                " tur er det.");
+        infoField.setDescription("Insert description");
         carField.setTitle("tur!");
         carField.setSubText("tur nu!");
         carField.setDescription("Det er denne spillers tur nu.");

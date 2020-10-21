@@ -36,8 +36,8 @@ public class Interface {
 
         // Opretter fields der skal bruges i spillet.
 
-        fieldContructor 
-        fields = new fieldContructor.Construct();
+        fieldContructor contruct = new fieldContructor();
+        fields = contruct.Construct();
 
         // Opretter gui elementet
         gui = new GUI(fields, Color.WHITE);
