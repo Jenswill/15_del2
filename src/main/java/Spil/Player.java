@@ -16,7 +16,7 @@ public class Player {
     }
 
     // Tilføjer penge til nuværende point
-    public void addPoint(int p_money){
+    public void addMoney(int p_money){
         money += p_money; if(money < 0){money = 0;}
     }
 
