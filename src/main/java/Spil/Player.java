@@ -7,26 +7,26 @@ public class Player {
     private int money;
 
     public Player(String n){
-        name = n;
-        money = 1000;
+        this.name = n;
+        this.money = 1000;
     }
     // Definerer spillerens navn
     public void setName(String p_name){
-        name = p_name;
+        this.name = p_name;
     }
 
-    // Tilføjer penge til nuværende point
+    // Tilføjer penge til nuværende formue
     public void addMoney(int p_money){
-        money += p_money; if(money < 0){money = 0;}
+        this.money += p_money; if(this.money < 0){this.money = 0;}
     }
 
     // Retunerer navn
     public String getName(){
-        return name;
+        return this.name;
     }
 
     // Retunerer antal penge spilleren har
     public int getMoney(){
-        return money;
+        return this.money;
     }
 }
