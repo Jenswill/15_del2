@@ -4,11 +4,11 @@ package Spil;
 
 public class Player {
     private String name;
-    private int money = 0;
+    private int money;
 
-    public Player(String n, int p){
+    public Player(String n){
         name = n;
-        money = p;
+        money = 1000;
     }
     // Definerer spillerens navn
     public void setName(String p_name){
