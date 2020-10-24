@@ -22,9 +22,9 @@ public class Language {
             prop.load(input);
             Helloworld = prop.getProperty("helloworld");
         } catch (FileNotFoundException e){
-            System.out.println("Error! File not found");
+
         } catch (IOException e){
-            System.out.println("Something went wrong");
+
         }
 
     }
