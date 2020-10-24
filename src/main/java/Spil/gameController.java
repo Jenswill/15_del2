@@ -11,8 +11,10 @@ public class gameController {
 
         String l = "English";
     Language test = new Language(l);
+    Language test2 = new Language("Danish");
 
     test.helloWorld();
+    test2.helloWorld();
 
 
     }
