@@ -49,6 +49,7 @@ public class Interface {
     public static void movePlayer(String playerName, int playerPos){
 
         fields[2].setCar(player1, true);
+        fields[2].setCar(player2, true);
 
     }
 
