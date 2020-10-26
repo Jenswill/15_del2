@@ -8,30 +8,19 @@ import java.util.Scanner;
 
 public class Interface {
 
-    // Nedenstående koder er fra:
-    // CDIO1, af os, gruppe 15.
+
     // Definering af variable
     // TODO: Fix adgangen til disser vars
-    private static String p_one;
-    private static String p_two;
     private static GUI gui;
     private static GUI_Field[] fields;
     private static GUI_Player player1;
     private static GUI_Player player2;
 
-    public Interface() {
-        //Presets
-        Scanner input = new Scanner(System.in);
-
-
-        System.out.println("Angiv navnet på spiller 1");
-
-        p_one = input.nextLine();
-
-        System.out.println("Angiv navnet på spiller 2");
-
-        p_two = input.nextLine();
-    }
+    /**
+     * Laver laver et gui element
+     * @param namePlayer1 Navnet af spiller 1
+     * @param namePlayer2 Navnet af spiller 2
+     */
     public static void createGui(String namePlayer1, String namePlayer2) {
 
         // Opretter fields der skal bruges i spillet.
@@ -55,6 +44,12 @@ public class Interface {
         // Implementere spillet
         gui.addPlayer(player1);
         gui.addPlayer(player2);
+
+    }
+    public static void movePlayer(String playerName, int playerPos){
+
+        fields[2].setCar(player1, true);
+        fields[2].setCar(player2, true);
 
     }
 

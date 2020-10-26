@@ -12,7 +12,7 @@ public class gameController {
         test.helloWorld();
 
         Interface.createGui("Mogens", "Preben");
-        //Interface.movePlayer();
+        Interface.movePlayer("Mogens", 5);
 
 
     }
