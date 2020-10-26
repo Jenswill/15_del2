@@ -46,36 +46,11 @@ public class Interface {
         gui.addPlayer(player2);
 
     }
-
-    /**
-     * Flytter spilleren på gui
-     * @param playerName Spillerens navn
-     * @param playerPos Spillerens position på brættet
-     */
     public static void movePlayer(String playerName, int playerPos){
-        if (playerName.equals(player1.getName())) {
-            fields[playerPos].setCar(player1, true);
-        } else if (playerName.equals(player2.getName())) {
-            fields[playerPos].setCar(player2, true);
-        } else {
-            throw new IllegalArgumentException("Player does not exist");
-        }
-    }
-    public static void displayMessage(String message) {
-        gui.showMessage("\n\n\n\n\n"+message);
-    }
-    public static void setBoardDice(int roll1, int roll2) {
-        gui.setDice(roll1, roll2);
-    }
-    public static void addPlayerBalance(String playerName, int pointDelta) {
-        if (playerName.equals(player1.getName())) {
-            player1.setBalance(player1.getBalance()+pointDelta);
-        } else if (playerName.equals(player2.getName())) {
-            player2.setBalance(player2.getBalance()+pointDelta);
-        } else {
-            throw new IllegalArgumentException("Player does not exist");
-        }
-    }
 
+        fields[2].setCar(player1, true);
+        fields[2].setCar(player2, true);
+
+    }
 
 }

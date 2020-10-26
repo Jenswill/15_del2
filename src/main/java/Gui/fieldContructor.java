@@ -33,8 +33,8 @@ public class fieldContructor {
             Field.setSubText(fieldPointArray[i]);
             // Tilføjere ændrigere til fields.
             fields[i] = Field;
-        }
 
+        }
         return fields;
     }
 }
