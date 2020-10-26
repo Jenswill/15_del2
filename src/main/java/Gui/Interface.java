@@ -32,7 +32,7 @@ public class Interface {
 
         p_two = input.nextLine();
     }
-    public static void createGui() {
+    public static void createGui(String namePlayer1, String namePlayer2) {
 
         // Opretter fields der skal bruges i spillet.
 
@@ -47,10 +47,10 @@ public class Interface {
         //Opretter spillere til spillet
         GUI_Car car = new GUI_Car();
         car.setPrimaryColor(Color.BLUE);
-        player1 = new GUI_Player(p_one,0, car);
+        player1 = new GUI_Player(namePlayer1,0, car);
         GUI_Car car2 = new GUI_Car();
         car2.setPrimaryColor(Color.YELLOW);
-        player2 = new GUI_Player(p_two,0, car2);
+        player2 = new GUI_Player(namePlayer2,0, car2);
 
         // Implementere spillet
         gui.addPlayer(player1);
