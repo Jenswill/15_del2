@@ -46,11 +46,23 @@ public class Interface {
         gui.addPlayer(player2);
 
     }
+
+    /**
+     * Flytter spilleren på gui
+     * @param playerName Spillerens navn
+     * @param playerPos Spillerens position på brættet
+     */
     public static void movePlayer(String playerName, int playerPos){
-
-        fields[2].setCar(player1, true);
-        fields[2].setCar(player2, true);
-
+        if (playerName.equals(player1.getName())) {
+            fields[playerPos].setCar(player1, true);
+        } else if (playerName.equals(player2.getName())) {
+            fields[playerPos].setCar(player2, true);
+        } else {
+            System.out.println("Error: Player does not exist");
+        }
+    }
+    public static void displayMessage(String message) {
+        gui.showMessage("\n\n\n\n\n"+message);
     }
 
 }

@@ -13,7 +13,7 @@ public class gameController {
 
         Interface.createGui("Mogens", "Preben");
         Interface.movePlayer("Mogens", 5);
-
+        Interface.displayMessage("Hejsa");
 
     }
 }
