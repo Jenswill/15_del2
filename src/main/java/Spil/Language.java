@@ -16,7 +16,7 @@ public class Language {
         // Accessed (24.10.2020)
         try {
             FileInputStream input = new FileInputStream("./Language/"+ language +".properties");
-            System.out.println(System.getProperty("user.dir"));
+
 
             Properties prop = new Properties();
             prop.load(input);
