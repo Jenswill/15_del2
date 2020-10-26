@@ -58,11 +58,24 @@ public class Interface {
         } else if (playerName.equals(player2.getName())) {
             fields[playerPos].setCar(player2, true);
         } else {
-            System.out.println("Error: Player does not exist");
+            throw new IllegalArgumentException("Player does not exist");
         }
     }
     public static void displayMessage(String message) {
         gui.showMessage("\n\n\n\n\n"+message);
     }
+    public static void setBoardDice(int roll1, int roll2) {
+        gui.setDice(roll1, roll2);
+    }
+    public static void addPlayerBalance(String playerName, int pointDelta) {
+        if (playerName.equals(player1.getName())) {
+            player1.setBalance(player1.getBalance()+pointDelta);
+        } else if (playerName.equals(player2.getName())) {
+            player2.setBalance(player2.getBalance()+pointDelta);
+        } else {
+            throw new IllegalArgumentException("Player does not exist");
+        }
+    }
+
 
 }

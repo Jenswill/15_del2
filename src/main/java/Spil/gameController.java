@@ -14,6 +14,8 @@ public class gameController {
         Interface.createGui("Mogens", "Preben");
         Interface.movePlayer("Mogens", 5);
         Interface.displayMessage("Hejsa");
+        Interface.setBoardDice(5, 3);
+        Interface.addPlayerBalance("Mogens", 500);
 
     }
 }
