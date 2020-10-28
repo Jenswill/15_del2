@@ -18,6 +18,7 @@ public class Language {
     private String HutsInTheMountain;
     private String Werewall;
     private String ThePit;
+    private String Goldmine;
 
 
     public Language(String language){
@@ -41,6 +42,7 @@ public class Language {
             HutsInTheMountain = prop.getProperty("HutsInTheMountain");
             Werewall = prop.getProperty("TheWerewall");
             ThePit = prop.getProperty("ThePit");
+            Goldmine = prop.getProperty("Goldmine");
 
         } catch (FileNotFoundException e){
 
@@ -64,6 +66,8 @@ public class Language {
             case "BlackCave" -> BlackCave;
             case "HutsInTheMountain" -> HutsInTheMountain;
             case "TheWerewall" -> Werewall;
+            case "ThePit" -> ThePit;
+            case "Goldmine" -> Goldmine;
             default -> "error";
         };
     }
