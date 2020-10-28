@@ -13,6 +13,7 @@ public class Language {
     private String PalaceGates;
     private String coldDesert;
     private String WalledCity;
+    private String Monastary;
 
 
     public Language(String language){
@@ -31,6 +32,7 @@ public class Language {
             PalaceGates = prop.getProperty("PalaceGates");
             coldDesert = prop.getProperty("ColdDesert");
             WalledCity = prop.getProperty("WalledCity");
+            Monastary = prop.getProperty("Monastary");
         } catch (FileNotFoundException e){
 
         } catch (IOException e){
@@ -48,6 +50,8 @@ public class Language {
             case "crater" -> crater;
             case "PalaceGates" -> PalaceGates;
             case "ColdDesert" -> coldDesert;
+            case "WalledCity" -> WalledCity;
+            case "Monastary" -> Monastary;
             default -> "error";
         };
     }
