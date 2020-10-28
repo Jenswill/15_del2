@@ -41,17 +41,12 @@ public class Language {
         System.out.println(Helloworld);
     }
     public String getFieldName(String name){
-        switch (name){
-            case "tower":
-                return tower;
-            case "crater":
-                return crater;
-            case "PalaceGates":
-                return PalaceGates;
-            case "ColdDesert":
-                return coldDesert;
-            default:
-                return "error";
-        }
+        return switch (name) {
+            case "tower" -> tower;
+            case "crater" -> crater;
+            case "PalaceGates" -> PalaceGates;
+            case "ColdDesert" -> coldDesert;
+            default -> "error";
+        };
     }
 }
