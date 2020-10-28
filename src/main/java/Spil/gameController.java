@@ -1,6 +1,8 @@
-package Spil;
+package java.Spil;
 
 import Gui.Interface;
+
+
 
 
 public class gameController {
