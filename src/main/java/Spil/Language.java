@@ -10,6 +10,7 @@ public class Language {
     private String Helloworld;
     private String tower;
     private String crater;
+    private String PalaceGates;
 
 
     public Language(String language){
@@ -25,6 +26,7 @@ public class Language {
             Helloworld = prop.getProperty("helloworld");
             tower = prop.getProperty("tower");
             crater = prop.getProperty("Crater");
+            PalaceGates = prop.getProperty("PalaceGates");
         } catch (FileNotFoundException e){
 
         } catch (IOException e){
