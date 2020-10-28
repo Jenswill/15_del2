@@ -11,6 +11,7 @@ public class Language {
     private String tower;
     private String crater;
     private String PalaceGates;
+    private String coldDesert;
 
 
     public Language(String language){
@@ -27,6 +28,7 @@ public class Language {
             tower = prop.getProperty("tower");
             crater = prop.getProperty("Crater");
             PalaceGates = prop.getProperty("PalaceGates");
+            coldDesert = prop.getProperty("ColdDesert");
         } catch (FileNotFoundException e){
 
         } catch (IOException e){
@@ -44,6 +46,10 @@ public class Language {
                 return tower;
             case "crater":
                 return crater;
+            case "PalaceGates":
+                return PalaceGates;
+            case "ColdDesert":
+                return coldDesert;
             default:
                 return "error";
         }
