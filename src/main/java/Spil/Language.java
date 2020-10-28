@@ -9,6 +9,7 @@ import java.util.Properties;
 public class Language {
     private String Helloworld;
     private String tower;
+    private String crater;
 
 
     public Language(String language){
@@ -23,6 +24,7 @@ public class Language {
             prop.load(input);
             Helloworld = prop.getProperty("helloworld");
             tower = prop.getProperty("tower");
+            crater = prop.getProperty("Crater");
         } catch (FileNotFoundException e){
 
         } catch (IOException e){
@@ -38,6 +40,8 @@ public class Language {
         switch (name){
             case "tower":
                 return tower;
+            case "crater":
+                return crater;
             default:
                 return "error";
         }
