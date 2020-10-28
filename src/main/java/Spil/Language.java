@@ -17,6 +17,7 @@ public class Language {
     private String BlackCave;
     private String HutsInTheMountain;
     private String Werewall;
+    private String ThePit;
 
 
     public Language(String language){
@@ -39,6 +40,8 @@ public class Language {
             BlackCave = prop.getProperty("BlackCave");
             HutsInTheMountain = prop.getProperty("HutsInTheMountain");
             Werewall = prop.getProperty("TheWerewall");
+            ThePit = prop.getProperty("ThePit");
+
         } catch (FileNotFoundException e){
 
         } catch (IOException e){
