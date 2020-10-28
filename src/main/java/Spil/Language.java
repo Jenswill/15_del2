@@ -14,6 +14,7 @@ public class Language {
     private String coldDesert;
     private String WalledCity;
     private String Monastary;
+    private String BlackCave;
 
 
     public Language(String language){
@@ -33,6 +34,7 @@ public class Language {
             coldDesert = prop.getProperty("ColdDesert");
             WalledCity = prop.getProperty("WalledCity");
             Monastary = prop.getProperty("Monastary");
+            BlackCave = prop.getProperty("BlackCave");
         } catch (FileNotFoundException e){
 
         } catch (IOException e){
@@ -46,12 +48,13 @@ public class Language {
     }
     public String getFieldName(String name){
         return switch (name) {
-            case "tower" -> tower;
-            case "crater" -> crater;
+            case "Tower" -> tower;
+            case "Crater" -> crater;
             case "PalaceGates" -> PalaceGates;
             case "ColdDesert" -> coldDesert;
             case "WalledCity" -> WalledCity;
             case "Monastary" -> Monastary;
+            case "BlackCave" -> BlackCave;
             default -> "error";
         };
     }
