@@ -1,4 +1,4 @@
-package Spil;
+package java.Spil;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -8,6 +8,7 @@ import java.util.Properties;
 
 public class Language {
     private String Helloworld;
+    private String tower;
 
 
     public Language(String language){
@@ -15,12 +16,13 @@ public class Language {
         //https://stackoverflow.com/questions/41628486/java-io-filenotfoundexception-when-creating-fileinputstream
         // Accessed (26.10.2020)
         try {
-            FileInputStream input = new FileInputStream("./Language/"+ language +".properties");
+            FileInputStream input = new FileInputStream("./Languages/"+ language +".properties");
 
 
             Properties prop = new Properties();
             prop.load(input);
             Helloworld = prop.getProperty("helloworld");
+            tower = prop.getProperty("tower");
         } catch (FileNotFoundException e){
 
         } catch (IOException e){
@@ -31,5 +33,13 @@ public class Language {
     public void helloWorld(){
 
         System.out.println(Helloworld);
+    }
+    public String getFieldName(String name){
+        switch (name){
+            case "tower":
+                return tower;
+            default:
+                return "error";
+        }
     }
 }
