@@ -16,6 +16,7 @@ public class Language {
     private String Monastary;
     private String BlackCave;
     private String HutsInTheMountain;
+    private String Werewall;
 
 
     public Language(String language){
@@ -37,6 +38,7 @@ public class Language {
             Monastary = prop.getProperty("Monastary");
             BlackCave = prop.getProperty("BlackCave");
             HutsInTheMountain = prop.getProperty("HutsInTheMountain");
+            Werewall = prop.getProperty("TheWerewall");
         } catch (FileNotFoundException e){
 
         } catch (IOException e){
@@ -58,6 +60,7 @@ public class Language {
             case "Monastary" -> Monastary;
             case "BlackCave" -> BlackCave;
             case "HutsInTheMountain" -> HutsInTheMountain;
+            case "TheWerewall" -> Werewall;
             default -> "error";
         };
     }
