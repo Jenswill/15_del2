@@ -20,57 +20,72 @@ class DiceTest {
             slag[i] = dice_one.Roll() + dice_two.Roll();
             switch(slag[i]){
                 case 2: hyppighed[0]++;
+                    break;
                 case 3: hyppighed[1]++;
+                    break;
                 case 4: hyppighed[2]++;
+                    break;
                 case 5: hyppighed[3]++;
+                    break;
                 case 6: hyppighed[4]++;
+                    break;
                 case 7: hyppighed[5]++;
+                    break;
                 case 8: hyppighed[6]++;
+                    break;
                 case 9: hyppighed[7]++;
+                    break;
                 case 10: hyppighed[8]++;
+                    break;
                 case 11: hyppighed[9]++;
+                    break;
                 case 12: hyppighed[10]++;
+                    break;
             }
         }
-        // Først udregnes den virtuelle ternings sigma:
-        //Her udregnes sandsynlighederne for alle mulige antal viste øjne
-        double[] p = new double[hyppighed.length];
-        for(int i=0; i<= hyppighed.length;i++){
-            p[i] = (double) hyppighed[i]/a;
+        //Først udregnes sandsynlighederne
+        double[] px = new double[hyppighed.length];
+        for(int i=0;i<hyppighed.length;i++){
+            px[i] = (double) hyppighed[i]/a;
         }
-        // Nu udregnes 'the expecte value', mu
-        double mu = 0.00;
-        for(int i=0; i<=hyppighed.length;i++){
-            mu += (i+2) * p[i];
-        }
-        // Nu udregnes sigma^2
-        double sigma = 0.00;
-        for(int i = 0; i<= hyppighed.length;i++){
-            sigma += Math.pow(i+2 - mu,2) * p[i];
-        }
-        sigma = Math.sqrt(sigma); // her omregnes det til sigma
 
-        // Så udregnes den teoretiske sigma.
-        // Nu udregnes sandsynlighederne for alle mulige antal viste øjne;
+        //Først udregnes mu
+        double mu =0;
 
-        double[] px = new double[10];
-        for(int i=2; i<=7;i++){
-            px[i-2] = (double) (i-1)/36;
+        for(int i=0;i<hyppighed.length;i++){
+            mu += (double)(i+2) * px[i];
         }
-        for(int i=1; i<=5;i++){
-            px[i+5]= (double) (6-i)/36;
+        //Nu udregnes sigma^2
+        double sigma2=0;
+        double sigma;
+
+        for(int i=0;i< hyppighed.length;i++){
+            sigma2 += (double) Math.pow((i+2)-mu,2) * px[i];
         }
-        double muT = 0.00;
-        // Nu udregnes 'the expecte value', muT
-        for(int i=0; i<=px.length;i++){
-            muT += (i+2) * px[i];
+        sigma = Math.sqrt(sigma2);
+
+        //Nu udregnes den teoretiske sandsynlighed
+        double[] pt = new double[hyppighed.length];
+        for(int i=0; i< 6;i++){
+            pt[i] = (double)(i+1)/36;
         }
-        double sigmaT = 0.00;
-        // Nu udregnes sigma^2
-        for (int i =0; i<=px.length;i++){
-            sigmaT += Math.pow(i+2 - muT,2) * px[i];
+        for(int i=0;i< 5;i++){
+            pt[i+6] = (double)(5-i)/36;
         }
-        sigmaT = Math.sqrt(sigmaT); //Her udregnes sigma
+        //Nu udregnes den teoretiske mu
+        double muT = 0;
+        for(int i=0;i<hyppighed.length;i++){
+            muT += (double)(i + 2) * pt[i];
+        }
+
+        //Så udregnes den teoretiske sigma^2
+        double sigmaT2=0;
+        double sigmaT;
+
+        for(int i=0;i< hyppighed.length;i++){
+            sigmaT2 +=(double)Math.pow((i+2)-muT,2) * pt[i];
+        }
+        sigmaT = Math.sqrt(sigmaT2);
 
         //nu sammenlignes de to sigma og mu
         double afvigelseMu = Math.abs(muT-mu)/muT;
