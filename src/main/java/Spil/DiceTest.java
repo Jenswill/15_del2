@@ -1,7 +1,8 @@
-package java.Spil;
+package Spil;
 
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,7 +14,7 @@ class DiceTest {
         Dice dice_two = new Dice(6);
         int a = 100000; // antal gange vi slår med de to terninger
         int[] slag = new int[a];
-        int[] hyppighed = new int[10];
+        int[] hyppighed = new int[11];
 
         for(int i=0; i<a;i++) {
             slag[i] = dice_one.Roll() + dice_two.Roll();
@@ -75,7 +76,7 @@ class DiceTest {
         double afvigelseMu = Math.abs(muT-mu)/muT;
         double afvigelseSigma = Math.abs(sigmaT-sigma)/sigmaT;
 
-        assertTrue(afvigelseSigma < 0.05 && afvigelseMu < 0.05);
+        assertEquals(afvigelseSigma < 0.05 && afvigelseMu < 0.05, true);
 
 
 

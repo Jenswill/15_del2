@@ -1,4 +1,4 @@
-package java.Spil;
+package Spil;
 
 
 import java.util.Random;
