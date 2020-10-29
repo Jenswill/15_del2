@@ -2,13 +2,11 @@ package Spil;
 
 public class Account {
 
-    Player player;
 
     int balance;
 
-    public Account(Player player, int start_balance){
+    public Account(int start_balance){
 
-        this.player = player;
         this.balance = start_balance;
 
     }
