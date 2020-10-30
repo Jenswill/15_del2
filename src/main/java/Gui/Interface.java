@@ -61,12 +61,29 @@ public class Interface {
             throw new IllegalArgumentException("Player does not exist");
         }
     }
+
+    /**
+     * Viser msg i gui
+     * @param message (String)
+     */
     public static void displayMessage(String message) {
         gui.showMessage("\n\n\n\n\n"+message);
     }
+
+    /**
+     * Setter dice på boarded
+     * @param roll1 int
+     * @param roll2 int
+     */
     public static void setBoardDice(int roll1, int roll2) {
         gui.setDice(roll1, roll2);
     }
+
+    /**
+     * tilføjer en delta balance til player
+     * @param playerName String
+     * @param pointDelta int
+     */
     public static void addPlayerBalance(String playerName, int pointDelta) {
         if (playerName.equals(player1.getName())) {
             player1.setBalance(player1.getBalance()+pointDelta);
