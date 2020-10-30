@@ -1,5 +1,6 @@
-package Spil;
+package test.java.Spil;
 
+import main.java.Spil.Dice;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 

@@ -1,6 +1,6 @@
-package java.Spil;
+package main.java.Spil;
 
-import Gui.Interface;
+import main.java.Gui.Interface;
 
 
 

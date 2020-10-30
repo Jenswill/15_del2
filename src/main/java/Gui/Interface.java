@@ -1,10 +1,9 @@
-package Gui;
+package main.java.Gui;
 
 import gui_fields.*;
 import gui_main.GUI;
 
 import java.awt.*;
-import java.util.Scanner;
 
 public class Interface {
 

@@ -1,4 +1,4 @@
-package Spil;
+package main.java.Spil;
 // Nedenstående koder er en modificeret udgave, med udgangspunkt i:
 // CDIO1, af os, gruppe 15.
 

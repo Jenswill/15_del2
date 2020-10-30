@@ -1,8 +1,7 @@
-package java.Spil;
+package main.java.Spil;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.sql.SQLOutput;
 import java.util.Properties;
 
 

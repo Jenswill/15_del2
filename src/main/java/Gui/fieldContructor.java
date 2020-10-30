@@ -1,4 +1,4 @@
-package Gui;
+package main.java.Gui;
 
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Start;

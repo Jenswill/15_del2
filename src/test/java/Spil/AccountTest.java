@@ -1,5 +1,6 @@
-package Spil;
+package test.java.Spil;
 
+import main.java.Spil.Account;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
