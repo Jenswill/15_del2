@@ -26,7 +26,7 @@ public class fieldContructor {
 
         // Looper gennem felterne og opretter dem.
         // Muligvis lav dette om til at læse en .prop eller json fil.
-        for (int i = 1; i < fieldList.length; i++) {
+        for (int i = 0; i < fieldList.length; i++) {
             GUI_Street Field = new GUI_Street();
             Field.setForeGroundColor(Color.BLACK);
             Field.setBackGroundColor(Color.WHITE);
@@ -35,7 +35,7 @@ public class fieldContructor {
             String stringPoints = String.valueOf(points);
             Field.setSubText(stringPoints);
             // Tilføjere ændrigere til fields.
-            fields[i] = Field;
+            fields[i+1] = Field;
 
         }
         return fields;
