@@ -1,6 +1,7 @@
 package main.java.Spil;
 
 import main.java.Gui.Interface;
+import main.java.Spil.Field;
 
 import java.util.Scanner;
 
@@ -13,10 +14,17 @@ public class gameController {
     private static Dice diceOne;
     private static Dice diceTwo;
     private static Player[] playerList;
+    private static Field[] fieldList= new Field[11];
+    private static String stringLang;
 
     private static void gameStart() {
-        // Opretter navne
         Scanner input = new Scanner(System.in);
+
+        System.out.println("Choose a language, (english, danish)");
+        stringLang = input.nextLine();
+
+        // Opretter navne
+
         System.out.println("Angiv navnet på spiller 1");
         String nameOne = input.nextLine();
         // TODO: Tilføj logik til afvise ens navne
@@ -41,10 +49,19 @@ public class gameController {
         return val1+val2;
     }
 
+    private static void generateFieldArray() {
+        String[] fieldNameArray = new String[]{"Tower", "Crater", "PalaceGates", "ColdDesert", "WalledCity", "Monastery", "BlackCave", "HutsInTheMountain", "TheWerewall", "ThePit","Goldmine"};
+        for (int i = 0; i < fieldNameArray.length; i++) {
+            Field tempField = new Field(fieldNameArray[i], stringLang);
+            fieldList[i] = tempField;
+        }
+    }
+
     public static void main(String[] args) {
-        Language lang = new Language("Danish");
+        Language lang = new Language(stringLang);
         lang.helloWorld();
         gameStart();
+        generateFieldArray();
 
         Interface.createGui(playerOne.getName(), playerTwo.getName());
         Interface.movePlayer(playerOne.getName(), 0);
@@ -58,8 +75,10 @@ public class gameController {
                 Interface.displayMessage("Det er spiller "+ playerList[i].getName() +" tur!");
                 rollVal = rollDices();
                 Interface.movePlayer(playerList[i].getName(), rollVal-1);
+                System.out.println(fieldList[rollVal-2].getFieldPoints());
                 Interface.setBoardDice(diceOne.getValue(),diceTwo.getValue());
                 Interface.displayMessage("Spiller "+ playerList[i].getName() +" rullede: "+rollVal);
+
             }
         }
 

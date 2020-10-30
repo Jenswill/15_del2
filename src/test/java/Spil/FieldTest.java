@@ -1,4 +1,4 @@
-package Spil;
+package main.java.Spil;
 
 import org.junit.jupiter.api.Test;
 

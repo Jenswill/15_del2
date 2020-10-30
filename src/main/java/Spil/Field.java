@@ -1,4 +1,4 @@
-package Spil;
+package main.java.Spil;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
