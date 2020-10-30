@@ -16,16 +16,23 @@ public class gameController {
         Scanner input = new Scanner(System.in);
         System.out.println("Angiv navnet på spiller 1");
         String nameOne = input.nextLine();
+        // TODO: Tilføj logik til afvise ens navne
         System.out.println("Angiv navnet på spiller 2");
         String nameTwo = input.nextLine();
 
         // Opretter players
         playerOne = new Player(nameOne, 0);
         playerTwo = new Player(nameTwo, 0);
+
+        // Opretter dices
+        diceOne = new Dice(1);
+        diceTwo = new Dice(1);
+
     }
-    private static void rollDices() {
-        diceOne.Roll();
-        diceTwo.Roll();
+    private static int rollDices() {
+        int val1 = diceOne.Roll();
+        int val2 = diceTwo.Roll();
+        return val1+val2;
     }
 
     public static void main(String[] args) {
@@ -38,7 +45,17 @@ public class gameController {
         Interface.movePlayer(playerTwo.getName(), 0);
         Interface.displayMessage("Spillet starter nu!");
 
+        int rollVal;
         while (true) {
+            Interface.displayMessage("Det er blå bils tur!");
+            rollVal = rollDices();
+            Interface.displayMessage("Blå bil rullede: "+rollVal);
+            Interface.movePlayer(playerOne.getName(), rollVal);
+
+            Interface.displayMessage("Det er gul bils tur!");
+            rollVal = rollDices();
+            Interface.displayMessage("Gul bil rullede: "+rollVal);
+            Interface.movePlayer(playerTwo.getName(), rollVal);
 
         }
 
