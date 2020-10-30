@@ -7,6 +7,17 @@ import java.util.Properties;
 
 public class Language {
     private String Helloworld;
+    private String tower;
+    private String crater;
+    private String PalaceGates;
+    private String coldDesert;
+    private String WalledCity;
+    private String Monastary;
+    private String BlackCave;
+    private String HutsInTheMountain;
+    private String Werewall;
+    private String ThePit;
+    private String Goldmine;
 
 
     public Language(String language){
@@ -20,6 +31,18 @@ public class Language {
             Properties prop = new Properties();
             prop.load(input);
             Helloworld = prop.getProperty("helloworld");
+            tower = prop.getProperty("tower");
+            crater = prop.getProperty("Crater");
+            PalaceGates = prop.getProperty("PalaceGates");
+            coldDesert = prop.getProperty("ColdDesert");
+            WalledCity = prop.getProperty("WalledCity");
+            Monastary = prop.getProperty("Monastary");
+            BlackCave = prop.getProperty("BlackCave");
+            HutsInTheMountain = prop.getProperty("HutsInTheMountain");
+            Werewall = prop.getProperty("TheWerewall");
+            ThePit = prop.getProperty("ThePit");
+            Goldmine = prop.getProperty("Goldmine");
+
         } catch (FileNotFoundException e){
 
         } catch (IOException e){
@@ -31,4 +54,6 @@ public class Language {
 
         System.out.println(Helloworld);
     }
+
 }
+
