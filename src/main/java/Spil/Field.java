@@ -12,6 +12,9 @@ public class Field {
     private boolean movePlayer;
 
 public Field(String name, String language){
+    // The following code is made by the help of following link
+    //https://stackoverflow.com/questions/41628486/java-io-filenotfoundexception-when-creating-fileinputstream
+    // Accessed (26.10.2020)
     try {
         FileInputStream input = new FileInputStream("./Fields/"+ name +".properties");
 
