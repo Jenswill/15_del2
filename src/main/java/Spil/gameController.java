@@ -11,10 +11,12 @@ public class gameController {
 
         test.helloWorld();
 
-        // Eksempel
+        // Eksempler
         Interface.createGui("Mogens", "Preben");
         Interface.movePlayer("Mogens", 5);
-
+        Interface.displayMessage("Hejsa");
+        Interface.setBoardDice(5, 3);
+        Interface.addPlayerBalance("Mogens", 500);
 
     }
 }
