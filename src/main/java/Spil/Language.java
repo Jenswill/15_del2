@@ -10,9 +10,9 @@ public class Language {
    private String welcome;
    private String giveName1;
    private String giveName2;
-   private String playerTurn1;
-   private String playerTurn2;
-
+   private String playerTurn;
+   private String roll;
+   private String win;
     public Language(String language){
         // The following code is made by the help of following link
         //https://stackoverflow.com/questions/41628486/java-io-filenotfoundexception-when-creating-fileinputstream
@@ -26,8 +26,9 @@ public class Language {
             welcome = prop.getProperty(welcome);
             giveName1 = prop.getProperty(giveName1);
             giveName2 = prop.getProperty(giveName2);
-            playerTurn1 = prop.getProperty(playerTurn1);
-            playerTurn2 = prop.getProperty(playerTurn2);
+            playerTurn = prop.getProperty(playerTurn);
+            roll = prop.getProperty(roll);
+            win = prop.getProperty(win);
         } catch (FileNotFoundException e){
 
         } catch (IOException e){
@@ -48,12 +49,16 @@ public class Language {
         return giveName2;
     }
 
-    public String getPlayerTurn1() {
-        return playerTurn1;
+    public String getPlayerTurn() {
+        return playerTurn;
     }
 
-    public String getPlayerTurn2() {
-        return playerTurn2;
+    public String getRoll() {
+        return roll;
+    }
+
+    public String getWin() {
+        return win;
     }
 }
 

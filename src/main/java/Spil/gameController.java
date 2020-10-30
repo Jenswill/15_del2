@@ -75,7 +75,7 @@ public class gameController {
             if (gameOver) {break;}
             for (int i = 0; i < 2; i++) {
                 Interface.movePlayer(playerList[i].getName(), 0);
-                Interface.displayMessage(lang.getPlayerTurn1() + playerList[i].getName() + lang.getPlayerTurn2());
+                Interface.displayMessage(playerList[i].getName() + lang.getPlayerTurn());
 
                 // Håndtere terninger
                 rollVal = rollDices();
@@ -87,11 +87,11 @@ public class gameController {
                 playerList[i].addMoney(points);
                 Interface.addPlayerBalance(playerList[i].getName(), points);
 
-                Interface.displayMessage("Spiller "+ playerList[i].getName() +" rullede: "+rollVal);
+                Interface.displayMessage(playerList[i].getName() + lang.getRoll() +rollVal);
 
                 // Håndtere winning criteria
                 if (playerList[i].getMoney() >= 3000) {
-                    Interface.displayMessage("Spiller "+ playerList[i].getName() +" har vundet!");
+                    Interface.displayMessage(playerList[i].getName() + lang.getWin());
                     Interface.displayMessage("Spillet er slut...");
                     gameOver = true;
                     break;
