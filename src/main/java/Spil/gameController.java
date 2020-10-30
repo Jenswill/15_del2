@@ -12,19 +12,20 @@ public class gameController {
     private static Player[] playerList;
     private static Field[] fieldList= new Field[11];
     private static String stringLang;
+    private static Language lang;
 
     private static void gameStart() {
         Scanner input = new Scanner(System.in);
 
         System.out.println("Choose a language, (english, danish)");
         stringLang = input.nextLine();
-
+        Language lang = new Language(stringLang);
         // Opretter navne
 
-        System.out.println("Angiv navnet på spiller 1");
+        System.out.println(lang.getGiveName1());
         String nameOne = input.nextLine();
         // TODO: Tilføj logik til afvise ens navne
-        System.out.println("Angiv navnet på spiller 2");
+        System.out.println(lang.getGiveName2());
         String nameTwo = input.nextLine();
 
         // Opretter players
@@ -54,10 +55,9 @@ public class gameController {
     }
 
     public static void main(String[] args) {
-        Language lang = new Language(stringLang);
+
 
         // Init funktioner
-        lang.helloWorld();
         gameStart();
         generateFieldArray();
 
@@ -65,7 +65,7 @@ public class gameController {
         Interface.createGui(playerOne.getName(), playerTwo.getName());
         Interface.movePlayer(playerOne.getName(), 0);
         Interface.movePlayer(playerTwo.getName(), 0);
-        Interface.displayMessage("Spillet starter nu!");
+        Interface.displayMessage(lang.getWelcome());
 
         int rollVal;
         boolean gameOver = false;
@@ -75,7 +75,7 @@ public class gameController {
             if (gameOver) {break;}
             for (int i = 0; i < 2; i++) {
                 Interface.movePlayer(playerList[i].getName(), 0);
-                Interface.displayMessage("Det er spiller "+ playerList[i].getName() +" tur!");
+                Interface.displayMessage(playerList[i].getName() + lang.getPlayerTurn());
 
                 // Håndtere terninger
                 rollVal = rollDices();
@@ -87,12 +87,12 @@ public class gameController {
                 playerList[i].addMoney(points);
                 Interface.addPlayerBalance(playerList[i].getName(), points);
 
-                Interface.displayMessage("Spiller "+ playerList[i].getName() +" rullede: "+rollVal);
+                Interface.displayMessage(playerList[i].getName() + lang.getRoll() +rollVal);
 
                 // Håndtere winning criteria
                 if (playerList[i].getMoney() >= 3000) {
-                    Interface.displayMessage("Spiller "+ playerList[i].getName() +" har vundet!");
-                    Interface.displayMessage("Spillet er slut...");
+                    Interface.displayMessage(playerList[i].getName() + lang.getWin());
+                    Interface.displayMessage(lang.getGameOver());
                     gameOver = true;
                     break;
                 }
@@ -100,7 +100,7 @@ public class gameController {
                 // Håndtere ekstra tur
                 if (fieldList[rollVal-2].isExtraTurn()) {
                     i = 0;
-                    Interface.displayMessage("Du landede på werewall, du for en ekstra tur");
+                    Interface.displayMessage(lang.getLandedOn() + fieldList[9].getFieldName() + lang.getExtraTur());
                 }
 
 

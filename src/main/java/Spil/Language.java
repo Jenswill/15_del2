@@ -2,24 +2,20 @@ package main.java.Spil;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.security.PublicKey;
 import java.util.Properties;
 
 
 public class Language {
-    private String Helloworld;
-    private String tower;
-    private String crater;
-    private String PalaceGates;
-    private String coldDesert;
-    private String WalledCity;
-    private String Monastery;
-    private String BlackCave;
-    private String HutsInTheMountain;
-    private String Werewall;
-    private String ThePit;
-    private String Goldmine;
-
-
+   private String welcome;
+   private String giveName1;
+   private String giveName2;
+   private String playerTurn;
+   private String roll;
+   private String win;
+   private String gameOver;
+   private String landedOn;
+   private String extraTur;
     public Language(String language){
         // The following code is made by the help of following link
         //https://stackoverflow.com/questions/41628486/java-io-filenotfoundexception-when-creating-fileinputstream
@@ -30,18 +26,15 @@ public class Language {
 
             Properties prop = new Properties();
             prop.load(input);
-            Helloworld = prop.getProperty("helloworld");
-            tower = prop.getProperty("tower");
-            crater = prop.getProperty("Crater");
-            PalaceGates = prop.getProperty("PalaceGates");
-            coldDesert = prop.getProperty("ColdDesert");
-            WalledCity = prop.getProperty("WalledCity");
-            Monastery = prop.getProperty("Monastery");
-            BlackCave = prop.getProperty("BlackCave");
-            HutsInTheMountain = prop.getProperty("HutsInTheMountain");
-            Werewall = prop.getProperty("TheWerewall");
-            ThePit = prop.getProperty("ThePit");
-            Goldmine = prop.getProperty("Goldmine");
+            welcome = prop.getProperty("welcome");
+            giveName1 = prop.getProperty("giveName1");
+            giveName2 = prop.getProperty("giveName2");
+            playerTurn = prop.getProperty("playerTurn");
+            roll = prop.getProperty("roll");
+            win = prop.getProperty("win");
+            gameOver = prop.getProperty("gameOver");
+            landedOn = prop.getProperty("landedOn");
+            extraTur = prop.getProperty("extraTur");
 
         } catch (FileNotFoundException e){
 
@@ -50,10 +43,41 @@ public class Language {
         }
 
     }
-    public void helloWorld(){
 
-        System.out.println(Helloworld);
+    public String getWelcome() {
+        return welcome;
     }
 
+    public String getGiveName1() {
+        return giveName1;
+    }
+
+    public String getGiveName2() {
+        return giveName2;
+    }
+
+    public String getPlayerTurn() {
+        return playerTurn;
+    }
+
+    public String getRoll() {
+        return roll;
+    }
+
+    public String getWin() {
+        return win;
+    }
+
+    public String getGameOver() {
+        return gameOver;
+    }
+
+    public String getLandedOn() {
+        return landedOn;
+    }
+
+    public String getExtraTur() {
+        return extraTur;
+    }
 }
 
