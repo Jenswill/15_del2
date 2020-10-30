@@ -12,19 +12,20 @@ public class gameController {
     private static Player[] playerList;
     private static Field[] fieldList= new Field[11];
     private static String stringLang;
+    private static Language lang;
 
     private static void gameStart() {
         Scanner input = new Scanner(System.in);
 
         System.out.println("Choose a language, (english, danish)");
         stringLang = input.nextLine();
-
+        Language lang = new Language(stringLang);
         // Opretter navne
 
-        System.out.println("Angiv navnet på spiller 1");
+        System.out.println(lang.getGiveName1());
         String nameOne = input.nextLine();
         // TODO: Tilføj logik til afvise ens navne
-        System.out.println("Angiv navnet på spiller 2");
+        System.out.println(lang.getGiveName2());
         String nameTwo = input.nextLine();
 
         // Opretter players
@@ -54,7 +55,7 @@ public class gameController {
     }
 
     public static void main(String[] args) {
-        Language lang = new Language(stringLang);
+
 
         // Init funktioner
         gameStart();
@@ -74,7 +75,7 @@ public class gameController {
             if (gameOver) {break;}
             for (int i = 0; i < 2; i++) {
                 Interface.movePlayer(playerList[i].getName(), 0);
-                Interface.displayMessage("Det er spiller "+ playerList[i].getName() +" tur!");
+                Interface.displayMessage(lang.getPlayerTurn1() + playerList[i].getName() + lang.getPlayerTurn2());
 
                 // Håndtere terninger
                 rollVal = rollDices();
