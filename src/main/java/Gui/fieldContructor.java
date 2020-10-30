@@ -25,7 +25,6 @@ public class fieldContructor {
         // Looper gennem felterne og opretter dem.
         // Muligvis lav dette om til at læse en .prop eller json fil.
         for (int i = 1; i < fieldNameArray.length; i++) {
-            //System.out.println("Building field:"+fieldNameArray[i]+":"+fieldPointArray[i]);
             GUI_Street Field = new GUI_Street();
             Field.setForeGroundColor(Color.BLACK);
             Field.setBackGroundColor(Color.WHITE);
