@@ -92,7 +92,7 @@ public class gameController {
                 // Håndtere winning criteria
                 if (playerList[i].getMoney() >= 3000) {
                     Interface.displayMessage(playerList[i].getName() + lang.getWin());
-                    Interface.displayMessage("Spillet er slut...");
+                    Interface.displayMessage(lang.getGameOver());
                     gameOver = true;
                     break;
                 }
