@@ -1,4 +1,4 @@
-package java.Spil;
+package Spil;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -55,20 +55,6 @@ public class Language {
 
         System.out.println(Helloworld);
     }
-    public String getFieldName(String name){
-        return switch (name) {
-            case "Tower" -> tower;
-            case "Crater" -> crater;
-            case "PalaceGates" -> PalaceGates;
-            case "ColdDesert" -> coldDesert;
-            case "WalledCity" -> WalledCity;
-            case "Monastary" -> Monastary;
-            case "BlackCave" -> BlackCave;
-            case "HutsInTheMountain" -> HutsInTheMountain;
-            case "TheWerewall" -> Werewall;
-            case "ThePit" -> ThePit;
-            case "Goldmine" -> Goldmine;
-            default -> "error";
-        };
-    }
+
 }
+

@@ -1,4 +1,4 @@
-package java.Spil;
+package Spil;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -11,14 +11,23 @@ public class Field {
     private boolean extraTurn;
     private boolean movePlayer;
 
-public Field(String name, Language language){
+public Field(String name, String language){
     try {
         FileInputStream input = new FileInputStream("./Fields/"+ name +".properties");
 
 
         Properties prop = new Properties();
         prop.load(input);
-        fieldName = language.getFieldName(name);
+        switch (language){
+            case "Danish":
+                fieldName = prop.getProperty("dkName");
+                break;
+            case  "English":
+                fieldName = prop.getProperty("engName");
+                break;
+            default: fieldName = "Error!";
+        }
+
         fieldPoints = Integer.parseInt(prop.getProperty("fieldPoints"));
         extraTurn = Boolean.parseBoolean(prop.getProperty("extraTurn"));
         movePlayer = Boolean.parseBoolean(prop.getProperty("movePlayer"));
@@ -33,5 +42,19 @@ public Field(String name, Language language){
 
 }
 
+    public boolean isExtraTurn() {
+        return extraTurn;
+    }
 
+    public boolean isMovePlayer() {
+        return movePlayer;
+    }
+
+    public int getFieldPoints() {
+        return fieldPoints;
+    }
+
+    public String getFieldName() {
+        return fieldName;
+    }
 }
