@@ -10,6 +10,7 @@ public class gameController {
     private static Player playerTwo;
     private static Dice diceOne;
     private static Dice diceTwo;
+    private static Player[] playerList;
 
     private static void gameStart() {
         // Opretter navne
@@ -27,6 +28,9 @@ public class gameController {
         // Opretter dices
         diceOne = new Dice(1);
         diceTwo = new Dice(1);
+
+        // Opretter player List
+        playerList = new Player[]{playerOne,playerTwo};
 
     }
     private static int rollDices() {
@@ -47,16 +51,14 @@ public class gameController {
 
         int rollVal;
         while (true) {
-            Interface.displayMessage("Det er blå bils tur!");
-            rollVal = rollDices();
-            Interface.displayMessage("Blå bil rullede: "+rollVal);
-            Interface.movePlayer(playerOne.getName(), rollVal);
-
-            Interface.displayMessage("Det er gul bils tur!");
-            rollVal = rollDices();
-            Interface.displayMessage("Gul bil rullede: "+rollVal);
-            Interface.movePlayer(playerTwo.getName(), rollVal);
-
+            for (int i = 0; i < 2; i++) {
+                Interface.movePlayer(playerList[i].getName(), 0);
+                Interface.displayMessage("Det er spiller "+ playerList[i].getName() +" tur!");
+                rollVal = rollDices();
+                Interface.movePlayer(playerList[i].getName(), rollVal);
+                Interface.setBoardDice(diceOne.getValue(),diceTwo.getValue());
+                Interface.displayMessage("Spiller "+ playerList[i].getName() +" rullede: "+rollVal);
+            }
         }
 
 

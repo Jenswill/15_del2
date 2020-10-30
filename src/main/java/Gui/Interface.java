@@ -46,6 +46,9 @@ public class Interface {
 
     }
     public static void movePlayer(String playerName, int playerPos){
+        for (int i = 0; i < fields.length; i++) {
+            fields[i].removeAllCars();
+        }
         if (playerName.equals(player1.getName())) {
             fields[playerPos].setCar(player1, true);
         } else if (playerName.equals(player2.getName())) {
