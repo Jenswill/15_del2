@@ -3,7 +3,7 @@ package Spil;
 public class Account {
 
 
-    int balance;
+    private int balance;
 
     public Account(int start_balance){
 
