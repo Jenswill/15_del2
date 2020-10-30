@@ -57,7 +57,6 @@ public class gameController {
         Language lang = new Language(stringLang);
 
         // Init funktioner
-        lang.helloWorld();
         gameStart();
         generateFieldArray();
 
@@ -65,7 +64,7 @@ public class gameController {
         Interface.createGui(playerOne.getName(), playerTwo.getName());
         Interface.movePlayer(playerOne.getName(), 0);
         Interface.movePlayer(playerTwo.getName(), 0);
-        Interface.displayMessage("Spillet starter nu!");
+        Interface.displayMessage(lang.getWelcome());
 
         int rollVal;
         boolean gameOver = false;

@@ -29,7 +29,7 @@ public class Interface {
 
         // Opretter gui elementet
         gui = new GUI(fields, Color.WHITE);
-        gui.setChanceCard("Velkommen til raffelspil");
+
 
 
         //Opretter spillere til spillet
