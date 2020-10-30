@@ -12,7 +12,7 @@ public class Language {
     private String PalaceGates;
     private String coldDesert;
     private String WalledCity;
-    private String Monastary;
+    private String Monastery;
     private String BlackCave;
     private String HutsInTheMountain;
     private String Werewall;
@@ -36,7 +36,7 @@ public class Language {
             PalaceGates = prop.getProperty("PalaceGates");
             coldDesert = prop.getProperty("ColdDesert");
             WalledCity = prop.getProperty("WalledCity");
-            Monastary = prop.getProperty("Monastary");
+            Monastery = prop.getProperty("Monastery");
             BlackCave = prop.getProperty("BlackCave");
             HutsInTheMountain = prop.getProperty("HutsInTheMountain");
             Werewall = prop.getProperty("TheWerewall");
