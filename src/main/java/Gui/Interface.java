@@ -64,7 +64,7 @@ public class Interface {
 
     /**
      * Viser msg i gui
-     * @param message (String)
+     * @param message String
      */
     public static void displayMessage(String message) {
         gui.showMessage("\n\n\n\n\n"+message);
