@@ -1,4 +1,4 @@
-package Spil;
+package java.Spil;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -15,7 +15,7 @@ public class Language {
         //https://stackoverflow.com/questions/41628486/java-io-filenotfoundexception-when-creating-fileinputstream
         // Accessed (26.10.2020)
         try {
-            FileInputStream input = new FileInputStream("./Language/"+ language +".properties");
+            FileInputStream input = new FileInputStream("./Languages/"+ language +".properties");
 
 
             Properties prop = new Properties();
