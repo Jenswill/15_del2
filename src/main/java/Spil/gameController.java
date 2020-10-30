@@ -55,7 +55,7 @@ public class gameController {
                 Interface.movePlayer(playerList[i].getName(), 0);
                 Interface.displayMessage("Det er spiller "+ playerList[i].getName() +" tur!");
                 rollVal = rollDices();
-                Interface.movePlayer(playerList[i].getName(), rollVal);
+                Interface.movePlayer(playerList[i].getName(), rollVal-1);
                 Interface.setBoardDice(diceOne.getValue(),diceTwo.getValue());
                 Interface.displayMessage("Spiller "+ playerList[i].getName() +" rullede: "+rollVal);
             }
