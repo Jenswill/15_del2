@@ -11,6 +11,7 @@ public class gameController {
 
         test.helloWorld();
 
+        // Eksempel
         Interface.createGui("Mogens", "Preben");
         Interface.movePlayer("Mogens", 5);
 
