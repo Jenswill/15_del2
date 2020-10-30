@@ -100,7 +100,7 @@ public class gameController {
                 // Håndtere ekstra tur
                 if (fieldList[rollVal-2].isExtraTurn()) {
                     i = 0;
-                    Interface.displayMessage("Du landede på werewall, du for en ekstra tur");
+                    Interface.displayMessage(lang.getLandedOn() + fieldList[9].getFieldName() + lang.getExtraTur());
                 }
 
 
