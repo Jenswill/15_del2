@@ -19,7 +19,7 @@ public class gameController {
 
         System.out.println("Choose a language, (english, danish)");
         stringLang = input.nextLine();
-        Language lang = new Language(stringLang);
+        lang = new Language(stringLang);
         // Opretter navne
 
         System.out.println(lang.getGiveName1());
@@ -75,7 +75,7 @@ public class gameController {
             if (gameOver) {break;}
             for (int i = 0; i < 2; i++) {
                 Interface.movePlayer(playerList[i].getName(), 0);
-                Interface.displayMessage(playerList[i].getName() + lang.getPlayerTurn());
+                Interface.displayMessage(playerList[i].getName() +" "+ lang.getPlayerTurn());
 
                 // Håndtere terninger
                 rollVal = rollDices();
@@ -87,11 +87,11 @@ public class gameController {
                 playerList[i].addMoney(points);
                 Interface.addPlayerBalance(playerList[i].getName(), points);
 
-                Interface.displayMessage(playerList[i].getName() + lang.getRoll() +rollVal);
+                Interface.displayMessage(playerList[i].getName() +" "+ lang.getRoll() +" "+rollVal);
 
                 // Håndtere winning criteria
                 if (playerList[i].getMoney() >= 3000) {
-                    Interface.displayMessage(playerList[i].getName() + lang.getWin());
+                    Interface.displayMessage(playerList[i].getName() +" "+ lang.getWin());
                     Interface.displayMessage(lang.getGameOver());
                     gameOver = true;
                     break;
@@ -100,7 +100,7 @@ public class gameController {
                 // Håndtere ekstra tur
                 if (fieldList[rollVal-2].isExtraTurn()) {
                     i = 0;
-                    Interface.displayMessage(lang.getLandedOn() + fieldList[9].getFieldName() + lang.getExtraTur());
+                    Interface.displayMessage(lang.getLandedOn() +" "+ fieldList[9].getFieldName() +" "+ lang.getExtraTur());
                 }
 
 
