@@ -2,6 +2,7 @@ package main.java.Gui;
 
 import gui_fields.*;
 import gui_main.GUI;
+import main.java.Spil.Field;
 
 import java.awt.*;
 
@@ -20,12 +21,12 @@ public class Interface {
      * @param namePlayer1 Navnet af spiller 1
      * @param namePlayer2 Navnet af spiller 2
      */
-    public static void createGui(String namePlayer1, String namePlayer2) {
+    public static void createGui(String namePlayer1, String namePlayer2, Field[] fieldList) {
 
         // Opretter fields der skal bruges i spillet.
 
         fieldContructor contruct = new fieldContructor();
-        fields = contruct.Construct();
+        fields = contruct.Construct(fieldList);
 
         // Opretter gui elementet
         gui = new GUI(fields, Color.WHITE);

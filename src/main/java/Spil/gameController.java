@@ -16,9 +16,17 @@ public class gameController {
 
     private static void gameStart() {
         Scanner input = new Scanner(System.in);
+        System.out.println("Choose language");
+        System.out.println("Press 1 for danish. Press 2 for english. Default: english");
+        String langInt = input.nextLine();
+        switch (langInt) {
+            case "1": stringLang="Danish";
+                break;
+            case "2": stringLang="English";
+                break;
+            default: stringLang="English";
+        }
 
-        System.out.println("Choose a language, (english, danish)");
-        stringLang = input.nextLine();
         lang = new Language(stringLang);
         // Opretter navne
 
@@ -62,7 +70,7 @@ public class gameController {
         generateFieldArray();
 
         // Opretter gui
-        Interface.createGui(playerOne.getName(), playerTwo.getName());
+        Interface.createGui(playerOne.getName(), playerTwo.getName(), fieldList);
         Interface.movePlayer(playerOne.getName(), 0);
         Interface.movePlayer(playerTwo.getName(), 0);
         Interface.displayMessage(lang.getWelcome());
