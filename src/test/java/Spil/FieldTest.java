@@ -5,8 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class FieldTest {
-    Language dk = new Language("Danish");
-    Language eng = new Language("English");
+
 
     Field tårn = new Field("Tower","Danish");
     Field tower = new Field("Tower","English");
