@@ -4,11 +4,12 @@ package Spil;
 
 public class Player {
     private String name;
-    private int money;
 
-    public Player(String n){
+    private Account account = new Account(0);
+
+    public Player(String n, int money){
         this.name = n;
-        this.money = 1000;
+        account.addToBalance(money);
     }
     // Definerer spillerens navn
     public void setName(String p_name){
@@ -17,7 +18,7 @@ public class Player {
 
     // Tilføjer penge til nuværende formue
     public void addMoney(int p_money){
-        this.money += p_money; if(this.money < 0){this.money = 0;}
+        account.addToBalance(p_money);
     }
 
     // Retunerer navn
@@ -27,6 +28,6 @@ public class Player {
 
     // Retunerer antal penge spilleren har
     public int getMoney(){
-        return this.money;
+        return account.getBalance();
     }
 }
