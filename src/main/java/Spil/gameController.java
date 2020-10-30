@@ -1,12 +1,8 @@
 package main.java.Spil;
 
 import main.java.Gui.Interface;
-import main.java.Spil.Field;
 
 import java.util.Scanner;
-
-
-
 
 public class gameController {
     private static Player playerOne;
@@ -59,10 +55,13 @@ public class gameController {
 
     public static void main(String[] args) {
         Language lang = new Language(stringLang);
+
+        // Init funktioner
         lang.helloWorld();
         gameStart();
         generateFieldArray();
 
+        // Opretter gui
         Interface.createGui(playerOne.getName(), playerTwo.getName());
         Interface.movePlayer(playerOne.getName(), 0);
         Interface.movePlayer(playerTwo.getName(), 0);
@@ -70,6 +69,8 @@ public class gameController {
 
         int rollVal;
         boolean gameOver = false;
+
+        // Main game loop
         while (true) {
             if (gameOver) {break;}
             for (int i = 0; i < 2; i++) {
@@ -87,6 +88,8 @@ public class gameController {
                 Interface.addPlayerBalance(playerList[i].getName(), points);
 
                 Interface.displayMessage("Spiller "+ playerList[i].getName() +" rullede: "+rollVal);
+
+                // Håndtere winning criteria
                 if (playerList[i].getMoney() >= 3000) {
                     Interface.displayMessage("Spiller "+ playerList[i].getName() +" har vundet!");
                     Interface.displayMessage("Spillet er slut...");
