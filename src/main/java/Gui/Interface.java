@@ -35,10 +35,10 @@ public class Interface {
         //Opretter spillere til spillet
         GUI_Car car = new GUI_Car();
         car.setPrimaryColor(Color.BLUE);
-        player1 = new GUI_Player(namePlayer1,0, car);
+        player1 = new GUI_Player(namePlayer1,1000, car);
         GUI_Car car2 = new GUI_Car();
         car2.setPrimaryColor(Color.YELLOW);
-        player2 = new GUI_Player(namePlayer2,0, car2);
+        player2 = new GUI_Player(namePlayer2,1000, car2);
 
         // Implementere spillet
         gui.addPlayer(player1);
@@ -46,6 +46,7 @@ public class Interface {
 
     }
     public static void movePlayer(String playerName, int playerPos){
+
         for (int i = 0; i < fields.length; i++) {
             fields[i].removeAllCars();
         }

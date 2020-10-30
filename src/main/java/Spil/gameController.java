@@ -32,8 +32,8 @@ public class gameController {
         String nameTwo = input.nextLine();
 
         // Opretter players
-        playerOne = new Player(nameOne, 0);
-        playerTwo = new Player(nameTwo, 0);
+        playerOne = new Player(nameOne, 1000);
+        playerTwo = new Player(nameTwo, 1000);
 
         // Opretter dices
         diceOne = new Dice(1);
@@ -69,15 +69,38 @@ public class gameController {
         Interface.displayMessage("Spillet starter nu!");
 
         int rollVal;
+        boolean gameOver = false;
         while (true) {
+            if (gameOver) {break;}
             for (int i = 0; i < 2; i++) {
                 Interface.movePlayer(playerList[i].getName(), 0);
                 Interface.displayMessage("Det er spiller "+ playerList[i].getName() +" tur!");
+
+                // Håndtere terninger
                 rollVal = rollDices();
                 Interface.movePlayer(playerList[i].getName(), rollVal-1);
-                System.out.println(fieldList[rollVal-2].getFieldPoints()+"  "+fieldList[rollVal-2].getFieldName());
                 Interface.setBoardDice(diceOne.getValue(),diceTwo.getValue());
+
+                // Håndtere points
+                int points = fieldList[rollVal-2].getFieldPoints();
+                playerList[i].addMoney(points);
+                Interface.addPlayerBalance(playerList[i].getName(), points);
+
                 Interface.displayMessage("Spiller "+ playerList[i].getName() +" rullede: "+rollVal);
+                if (playerList[i].getMoney() >= 3000) {
+                    Interface.displayMessage("Spiller "+ playerList[i].getName() +" har vundet!");
+                    Interface.displayMessage("Spillet er slut...");
+                    gameOver = true;
+                    break;
+                }
+
+                // Håndtere ekstra tur
+                if (fieldList[rollVal-2].isExtraTurn()) {
+                    i = 0;
+                    Interface.displayMessage("Du landede på werewall, du for en ekstra tur");
+                }
+
+
 
             }
         }
